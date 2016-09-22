@@ -12,11 +12,12 @@ class GameListTable extends Migration
      */
     public function up()
     {
-        Schema::create('gameslist', function (Blueprint $table) {
+        Schema::create('games', function (Blueprint $table) {
             $table->increments('id');
             $table->string("name");
             $table->string("release_date");
             $table->text("info");
+            $table->text("developer");
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class GameListTable extends Migration
      */
     public function down()
     {
-        Schema::drop('gameslist');
+        Schema::drop('games');
     }
 }

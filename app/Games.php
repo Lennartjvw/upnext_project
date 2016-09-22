@@ -9,6 +9,7 @@ class Games extends Model
     protected $fillable  = [
         'name',
         'release_date',
-        'info'
+        'info',
+        'developer'
     ];
 }

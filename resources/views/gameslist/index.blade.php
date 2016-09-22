@@ -8,6 +8,7 @@
         <a href="{{ url('/games', $game->id) }}"><h1>{{ $game->name }}</h1></a>
         <h2>{{ $game->release_date }}</h2>
         <p>{{ $game->info }}</p>
+        <p>{{ $game->developer }}</p>
 
     @endforeach
 </div>

@@ -9,6 +9,8 @@
 
     <p>{{ $games->info }}</p>
 
+    <p>{{ $games->developer }}</p>
+
     <a href="{{ url('/games') }}"><p>Go back</p></a>
 
 </div>

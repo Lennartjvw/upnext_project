@@ -33,8 +33,6 @@ class GamesListController extends Controller {
 
         return redirect('games');
 
-        return 'test';
-
     }
 
 
