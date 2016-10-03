@@ -25,13 +25,13 @@ class GamesListController extends Controller {
         return view('gameslist/create');
     }
 
-    public function store(){
+    public function store(Requests\AddGameRequest $request){
 
         $input = Request::all();
 
-        Games::create($input);
+        Games::create($request->all());
 
-        return redirect('games');
+       return redirect('games');
 
     }
 

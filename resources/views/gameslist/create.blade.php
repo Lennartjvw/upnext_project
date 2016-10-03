@@ -16,7 +16,7 @@
         <div class="form-group">
 
             {!! Form::label('release_date', 'Release date:') !!}
-            {!! Form::text('release_date', null, ['class' => 'form-control']) !!}
+            {!! Form::input('date', 'release_date', null, ['class' => 'form-control']) !!}
 
         </div>
 
@@ -41,9 +41,17 @@
         </div>
 
 
-
-
         {!! Form::close() !!}
+
+        @if ($errors->any())
+
+            <ul class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+
+        @endif
 
 
     </div>
