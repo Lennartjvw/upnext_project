@@ -11,8 +11,6 @@
 
     <p>{{ $games->developer }}</p>
 
-    {!! Form::checkbox('games') !!}
-
     <a href="{{ url('/games') }}"><p>Go back</p></a>
 
 </div>

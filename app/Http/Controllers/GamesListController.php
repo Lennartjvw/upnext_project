@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 use App\Games;
 use App\Http\Requests;
 
-//use Illuminate\Http\Request;
-use Request;
+use Illuminate\Http\Request;
+//use Request;
 use App\Http\Controllers\Controller;
 
 class GamesListController extends Controller {
@@ -32,6 +32,22 @@ class GamesListController extends Controller {
         Games::create($request->all());
 
        return redirect('games');
+
+    }
+
+    public function edit($id){
+
+        $games = Games::findOrFail($id);
+        return view ('gameslist.edit', compact('games'));
+    }
+
+    public function update($id, Requests\AddGameRequest $request){
+
+        $games = Games::findOrFail($id);
+
+        $games->update($request->all());
+
+        return redirect('games');
 
     }
 

@@ -18,8 +18,10 @@ Route::get('/', function () {
 Route::auth();
 Route::get('/home', 'HomeController@index');
 
-Route::get('/games', 'GamesListController@index');
-Route::get('/games/create', 'GamesListController@create');
-Route::get('/games/{id}', 'GamesListController@show');
-Route::post('/games', 'GamesListController@store');
+//Route::get('/games', 'GamesListController@index');
+//Route::get('/games/create', 'GamesListController@create');
+//Route::get('/games/{id}', 'GamesListController@show');
+//Route::post('/games', 'GamesListController@store');
+
+Route::resource('games', 'GamesListController');
 
