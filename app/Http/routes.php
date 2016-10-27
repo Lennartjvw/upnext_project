@@ -24,4 +24,13 @@ Route::get('/home', 'HomeController@index');
 //Route::post('/games', 'GamesListController@store');
 
 Route::resource('games', 'GamesListController');
+//Route::get('/games/create', ['middleware' => ['auth', 'admin'], function()
+//{
+// return "yoy";
+//}]);
+
+Route::get('/games/create', ['middleware' => ['auth', 'admin'],'uses' => 'GamesListController@create']);
+
+Route::get('/user/{id}', 'UserController@show');
+
 

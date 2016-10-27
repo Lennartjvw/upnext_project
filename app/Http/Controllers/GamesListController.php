@@ -3,9 +3,10 @@ namespace App\Http\Controllers;
 
 use App\Games;
 use App\Http\Requests;
-
-use Illuminate\Http\Request;
-//use Request;
+use Auth;
+//use Illuminate\Http\Request;
+use Request;
+//use App\Http\Middleware\Auth;
 use App\Http\Controllers\Controller;
 
 class GamesListController extends Controller {

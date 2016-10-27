@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        <div class="test"></div>
         <h1>Add a game</h1>
 
         {!! Form::open(['url' => '/games']) !!}

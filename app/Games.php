@@ -12,4 +12,10 @@ class Games extends Model
         'info',
         'developer'
     ];
+
+    public function user() {
+
+        return $this->belongsTo('App\User');
+
+    }
 }

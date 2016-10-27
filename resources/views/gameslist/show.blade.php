@@ -1,18 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <div class="container">
 
-    <h1>{{ $games->name }}</h1>
+        <div class="gameswrapper">
 
-    <h2>{{ $games->release_date }}</h2>
+            <h1>{{ $games->name }}</h1>
 
-    <p>{{ $games->info }}</p>
+            <h2>{{ $games->release_date }}</h2>
 
-    <p>{{ $games->developer }}</p>
+            <p>{{ $games->info }}</p>
 
-    <a href="{{ url('/games') }}"><p>Go back</p></a>
+            <p>{{ $games->developer }}</p>
 
-</div>
+            <a href="{{ url('/games') }}"><p>Go back</p></a>
+
+        </div>
+
+    </div>
 
 @endsection

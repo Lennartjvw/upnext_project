@@ -24,8 +24,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-//    public function games() {
-//        return $this->belongsToMany($games);
-//
-//    }
+    public function games() {
+
+        return $this->hasMany('App\Games');
+
+    }
+
+    public function isAAdmin() {
+        return true;
+    }
+
+    public function isAdmin()
+    {
+        return $this->admin; // this looks for an admin column in your users table
+    }
+
 }
