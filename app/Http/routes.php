@@ -31,6 +31,12 @@ Route::resource('games', 'GamesListController');
 
 Route::get('/games/create', ['middleware' => ['auth', 'admin'],'uses' => 'GamesListController@create']);
 
-Route::get('/user/{id}', 'UserController@show');
+//Route::get('/user/{id}', 'UserController@show');
+
+Route::get('/user/{id}', ['middleware' => 'auth','uses' => 'UserController@show']);
+Route::get('/useredit/{id}', ['middleware' => 'auth', 'uses' => 'UserController@showProfile']);
+
+Route::get('games/follow/{id}', 'UserController@follow');
+
 
 

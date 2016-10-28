@@ -24,11 +24,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function games() {
-
-        return $this->hasMany('App\Games');
-
-    }
+//    public function games() {
+//
+//        return $this->hasMany('App\Games');
+//
+//    }
 
     public function isAAdmin() {
         return true;
@@ -37,6 +37,11 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->admin; // this looks for an admin column in your users table
+    }
+
+    public function games()
+    {
+        return $this->belongsToMany('App\Games');
     }
 
 }

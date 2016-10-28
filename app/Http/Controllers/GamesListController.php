@@ -16,6 +16,7 @@ class GamesListController extends Controller {
         return view('gameslist/index', compact('games'));
     }
 
+
     public function show($id){
         $games = Games::findOrFail($id);
 

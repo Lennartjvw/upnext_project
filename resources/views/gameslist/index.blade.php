@@ -3,6 +3,14 @@
 @section("content")
     <div class="container">
 
+
+        @if(Auth::guest())
+            <a href="{{ url('/register')}}">Your own list</a>
+        @else
+            <a href="{{ url('/user/'.Auth::user()->id) }}">Your own list</a>
+
+        @endif
+
         @foreach($games as $game)
 
             <div class="gameswrapper">
@@ -13,11 +21,11 @@
                 {{--<p>{{ $game->info }}</p>--}}
                 <p>{{ $game->developer }}</p>
 
-                {{ Form::button('Follow', array('class' => 'btn')) }}
-                {!! Form::close() !!}
+                <a href="{{ url('games/follow/'.$game->id) }}">Follow</a>
+                {{--{{ Form::button('Follow', array('class' => 'btn')) }}--}}
+                {{--{!! Form::close() !!}--}}
 
             </div>
-w
         @endforeach
     </div>
 
