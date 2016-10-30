@@ -24,6 +24,7 @@ Route::get('/home', 'HomeController@index');
 //Route::post('/games', 'GamesListController@store');
 
 Route::resource('games', 'GamesListController');
+Route::get('gamessearch', 'GamesListController@search');
 //Route::get('/games/create', ['middleware' => ['auth', 'admin'], function()
 //{
 // return "yoy";
@@ -35,6 +36,8 @@ Route::get('/games/create', ['middleware' => ['auth', 'admin'],'uses' => 'GamesL
 
 Route::get('/user/{id}', ['middleware' => 'auth','uses' => 'UserController@show']);
 Route::get('/useredit/{id}', ['middleware' => 'auth', 'uses' => 'UserController@showProfile']);
+Route::patch('/useredit/{id}', ['middleware' => 'auth', 'uses' => 'UserController@updateUser']);
+Route::get('/useredit/{id}/delete', ['middleware' => 'auth', 'uses' => 'UserController@destroy']);
 
 Route::get('games/follow/{id}', 'UserController@follow');
 

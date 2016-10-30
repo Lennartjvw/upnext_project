@@ -13,7 +13,8 @@ class GamesListController extends Controller {
 
     public function index(){
         $games = \App\Games::latest()->get();
-        return view('gameslist/index', compact('games'));
+        $status = "Follow";
+        return view('gameslist/index', compact('games', 'status'));
     }
 
 
@@ -50,6 +51,18 @@ class GamesListController extends Controller {
         $games->update($request->all());
 
         return redirect('games');
+
+    }
+
+    public function search()
+    {
+        $search = \Request::get('search'); //<-- we use global request to get the param of URI
+
+        $games = Games::where('name','like','%'.$search.'%')
+            ->orderBy('name')
+            ->paginate(20);
+
+        return view('gameslist.index',compact('games'));
 
     }
 
