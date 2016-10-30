@@ -13,7 +13,7 @@ class GamesListController extends Controller {
 
     public function index(){
         $games = \App\Games::latest()->get();
-        $status = "Follow";
+        $status = "hidden";
         return view('gameslist/index', compact('games', 'status'));
     }
 

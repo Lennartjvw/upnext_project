@@ -2,7 +2,44 @@
     width: 300px;
     height: 300px;
     float: left;
-    margin: 6.5px;
+    margin: 40px;
     border: 1px solid gray;
     text-align: center;
 }
+
+.checkingFollow {
+    width: 100px;
+    height: 20px;
+    color: white;
+    text-decoration: none;
+    background-color: green;
+    margin: auto;
+
+}
+
+.checkingUnfollow {
+    width: 100px;
+    height: 20px;
+    color: white;
+    margin: 0 auto;
+    text-decoration: none;
+    background-color: red;
+    margin: auto;
+
+}
+
+.own_list{
+    margin: auto;
+    width: 150px;
+    text-align: center;
+    color: white;
+    height: 30px;
+    background-color: gold;
+}
+
+.search_wrapper {
+    width: 300px;
+    margin: 0 auto;
+}
+
+

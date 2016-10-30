@@ -18,21 +18,12 @@ Route::get('/', function () {
 Route::auth();
 Route::get('/home', 'HomeController@index');
 
-//Route::get('/games', 'GamesListController@index');
-//Route::get('/games/create', 'GamesListController@create');
-//Route::get('/games/{id}', 'GamesListController@show');
-//Route::post('/games', 'GamesListController@store');
 
 Route::resource('games', 'GamesListController');
 Route::get('gamessearch', 'GamesListController@search');
-//Route::get('/games/create', ['middleware' => ['auth', 'admin'], function()
-//{
-// return "yoy";
-//}]);
 
 Route::get('/games/create', ['middleware' => ['auth', 'admin'],'uses' => 'GamesListController@create']);
 
-//Route::get('/user/{id}', 'UserController@show');
 
 Route::get('/user/{id}', ['middleware' => 'auth','uses' => 'UserController@show']);
 Route::get('/useredit/{id}', ['middleware' => 'auth', 'uses' => 'UserController@showProfile']);
@@ -40,6 +31,7 @@ Route::patch('/useredit/{id}', ['middleware' => 'auth', 'uses' => 'UserControlle
 Route::get('/useredit/{id}/delete', ['middleware' => 'auth', 'uses' => 'UserController@destroy']);
 
 Route::get('games/follow/{id}', 'UserController@follow');
+Route::get('games/unfollow/{id}', 'UserController@unfollow');
 
 
 

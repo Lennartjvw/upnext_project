@@ -7,6 +7,8 @@
 
                 <div class="gameswrapper">
                     <h1>{{ $mygame->name }}</h1>
+                    <a href="{{ url('games/follow/'.$mygame->id) }}">Follow</a>
+                    <a href="{{ url('games/unfollow/'.$mygame->id) }}">Unfollow</a>
                 </div>
             @endforeach
 
